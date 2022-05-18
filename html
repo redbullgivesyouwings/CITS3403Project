@@ -25,7 +25,7 @@
           <style>
           
           </style>
-          <game-theme-manager>
+          <game-manager>
             <header>
               <div class="title">Guess a place</div>
             </header>
@@ -41,6 +41,7 @@
                           <span class="input-group-text">1</span>
                         </div>
                         <input type="text" class="form-control" >
+                        <input type="submit" class="btn btn-info" value="Submit">
                       </div>
                     </game-row>
                     <game-row>
@@ -52,6 +53,7 @@
                           <span class="input-group-text">2</span>
                         </div>
                         <input type="text" class="form-control" >
+                        <input type="submit" class="btn btn-info" value="Submit">
                       </div>
                     </game-row>
                     <game-row>
@@ -63,6 +65,7 @@
                           <span class="input-group-text">3</span>
                         </div>
                         <input type="text" class="form-control" >
+                        <input type="submit" class="btn btn-info" value="Submit">
                       </div>
                     </game-row>
                     <game-row>
@@ -74,6 +77,7 @@
                           <span class="input-group-text">4</span>
                         </div>
                         <input type="text" class="form-control" >
+                        <input type="submit" class="btn btn-info" value="Submit">
                       </div>
                     </game-row>
                     <game-row>
@@ -85,49 +89,12 @@
                           <span class="input-group-text">5</span>
                         </div>
                         <input type="text" class="form-control" >
+                        <input type="submit" class="btn btn-info" value="Submit">
                       </div>
                     </game-row>
                   </div>
                 </div>
-                <game-keyboard>
-                  <style>
-                  
-                  </style>
-                  <div id="keyboard">
-                    <div class="row">
-                      <button data-key="q">q</button>
-                      <button data-key="w">w</button>
-                      <button data-key="e">e</button>
-                      <button data-key="r">r</button>
-                      <button data-key="t">t</button>
-                      <button data-key="y">y</button>
-                      <button data-key="u">u</button>
-                      <button data-key="i">i</button>
-                      <button data-key="o">o</button>
-                      <button data-key="p">p</button>
-                    </div>
-                    <div class="row">
-                      <button data-key="a">a</button>
-                      <button data-key="s">s</button>
-                      <button data-key="d">d</button>
-                      <button data-key="f">f</button>
-                      <button data-key="g">g</button>
-                      <button data-key="h">h</button>
-                      <button data-key="j">j</button>
-                      <button data-key="k">k</button>
-                      <button data-key="l">l</button>
-                    </div>
-                    <div class="row">
-                      <button data-key="z">z</button>
-                      <button data-key="x">x</button>
-                      <button data-key="c">c</button>
-                      <button data-key="v">v</button>
-                      <button data-key="b">b</button>
-                      <button data-key="n">n</button>
-                      <button data-key="m">m</button>
-                    </div>
-                  </div> 
-                </game-keyboard>
+
               </div>
               <game-modal open>
                 <style>
@@ -150,10 +117,19 @@
                   
                   </style>
                   <div class="container">
-                  
+                    <h1>Result</h1>
+                    <div id="statistic">
+                      <div class="statistic-container>
+                        <div class="statistic"></div>
+                        <div class="label">Played</div>
+                      </div>
+                    </div>
+                    <h2>Congratulations!</h2>
+
                   </div>
                 </game-stats>
               </game-modal>
+              <game-page>
                 <game-help>
                   <style>
                   
@@ -165,9 +141,9 @@
                       <p><strong>"A new picture will be changed everyday."</strong></p></div>
                   </section>
                 </game-help>
-              </game-modal>
-              </div>
-            </game-theme-manager>
-          </game-app>
+              </game-page>
+            </div>
+          </game-manager>
+        </game-app>
   </body>
 </html>
