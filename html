@@ -29,6 +29,21 @@
             <header>
               <div class="title">Guess a place</div>
             </header>
+            <game-page>
+              <game-help>
+                <style>
+                  
+                </style>
+                <section>
+                  <button id="show">Instruction</button>
+                  <dialog id="instructions">
+                    <p>"Guess the "<strong>PLACE</strong>" in five tries"</p>
+                    <p>"Each guess must be valid word. Hit the submit button to submit."</p>
+                    <p><strong>"A new picture will be changed everyday."</strong></p>
+                    <button id="close">Close</button></dialog>
+                </section>
+              </game-help>
+            </game-page>
             <div id="game">
               <div id="board-container">
                 <div id="board" style="width:400px;height:200px;">
@@ -124,19 +139,7 @@
                   </div>
                 </game-stats>
               </game-modal>
-              <game-page>
-                <game-help>
-                  <style>
-                  
-                  </style>
-                  <section>
-                    <div class="instructions">
-                      <p>"Guess the "<strong>PLACE</strong>" in five tries"</p>
-                      <p>"Each guess must be valid word. Hit the submit button to submit."</p>
-                      <p><strong>"A new picture will be changed everyday."</strong></p></div>
-                  </section>
-                </game-help>
-              </game-page>
+
             </div>
           </game-manager>
         </game-app>
