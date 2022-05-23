@@ -25,9 +25,9 @@ $(window).on('load', () =>  {
     const statistic = document.getElementsByClassName('label')[0];
     let attempts = 0;
     for(let i = 0; i < 5; i++) {
-        const guess = document.getElementsByClassName('form-control')[i].value;
-        console.log(guess);
         buttons[i].addEventListener('mousedown', function() {
+            const guess = document.getElementsByClassName('form-control')[i].value;
+            console.log(guess);
             if(guess == answers[day]) {
                 message.innerText = "Congratulations";
                 let accuracy = (1 - attempts/5) * 100;
