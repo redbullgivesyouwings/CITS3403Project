@@ -20,7 +20,8 @@
     </style>
   </head>
   <body>
-        <script src="JavaScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="JavaScript.js"></script>
         <game-app>
           <style>
           
@@ -38,15 +39,15 @@
                 <section>
                   <button id="show">Instruction</button>
                   <dialog id="instructions">
-                    <p>"Guess the "<strong>PLACE</strong>" in five tries"</p>
-                    <p>"Each guess must be valid word. Hit the submit button to submit."</p>
-                    <p><strong>"A new picture will be changed everyday."</strong></p>
+                    <p>Guess the <strong>PLACE</strong> in five tries</p>
+                    <p>Each guess must be valid word. Hit the submit button to submit.</p>
+                    <p><strong>A new picture will be changed everyday.</strong></p>
                     <button id="close">Close</button></dialog>
                 </section>
               </game-help>
             </game-page>
             <!--This is showing images-->
-            <img src="" alt="loading">
+            <img src="" >
             <!--This is input text for 5 guesses-->
             <div id="game">
               <div id="board-container">
@@ -138,7 +139,7 @@
                         <div class="label">Played</div>
                       </div>
                     </div>
-                    <h2>Congratulations!</h2>
+                    <h2></h2>
                   </div>
                 </game-stats>
               </game-modal>
