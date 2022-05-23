@@ -11,14 +11,15 @@ $(window).on('load', () =>  {
     /* instructions button functionality */
     const instructionsButton = document.getElementById('show');
     let instructions = document.getElementById('instructions');
+
     const closeButton = document.getElementById('close');
     instructionsButton.addEventListener('mouseclick', function() {
         console.log(instructionsButton);
-        instructions.outerHTML = "<dialog open id='instructions'><p>Guess the <strong>PLACE</strong> in five tries</p><p>Each guess must be valid word. Hit the submit button to submit.</p><p><strong>A new picture will be changed everyday.</strong></p><button id='close'>Close</button></dialog>";
-    })
+        instructions.setAttribute('open', 'true');
+        })
     closeButton.addEventListener('mouseclick', function() {
-        instructions.outerHTML = "<dialog id='instructions'><p>Guess the <strong>PLACE</strong> in five tries</p><p>Each guess must be valid word. Hit the submit button to submit.</p><p><strong>A new picture will be changed everyday.</strong></p><button id='close'>Close</button></dialog>";
-    })
+        instructions.setAttribute('open', 'false');
+        })
     
     /* submit buttons functionality */
     let buttons = document.getElementsByClassName('btn btn-info');
