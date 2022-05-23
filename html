@@ -14,7 +14,7 @@
       property="og:description"
       content="Guess the place in 5 tries. A new picture is available each day."
     />  
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css" media=”screen” />
     <style>
 
     </style>
@@ -42,12 +42,13 @@
                     <p>Guess the <strong>PLACE</strong> in five tries</p>
                     <p>Each guess must be valid word. Hit the submit button to submit.</p>
                     <p><strong>A new picture will be changed everyday.</strong></p>
-                    <button id="close">Close</button></dialog>
+                    <button id="close">Close</button>
+                  </dialog>
                 </section>
               </game-help>
             </game-page>
             <!--This is showing images-->
-            <img src="" >
+            <img src="" alt="loading...">
             <!--This is input text for 5 guesses-->
             <div id="game">
               <div id="board-container">
@@ -134,7 +135,7 @@
                   <div class="container">
                     <h1>Result</h1>
                     <div id="statistic">
-                      <div class="statistic-container>
+                      <div class="statistic-container">
                         <div class="statistic"></div>
                         <div class="label">Played</div>
                       </div>
