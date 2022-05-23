@@ -2,21 +2,22 @@
 $(window).on('load', () =>  {
     /* getting day of week and corresponding image */
     /* lines 5-6 is from https://www.w3schools.com/jsref/jsref_getday.asp */
-    const d = new Date();
+    let d = new Date();
     let day = d.getDay();
     const images = ["sunday.jpeg", "monday.jpeg", "tuesday.jpeg", "wednesday.jpeg", "thursday.jpeg", "friday.jpeg", "saturday.jpeg"];
     const answers = ["arc de triomphe", "stonehenge", "the sphynx", "the great wall of china", "mount rushmore", "neuschwanstein castle", "saint basil's cathedral"];
     document.getElementsByTagName('img')[0].src = images[day];
 
     /* instructions button functionality */
-    let instructionsButton = document.getElementById('show');
+    const instructionsButton = document.getElementById('show');
     let instructions = document.getElementById('instructions');
-    let closeButton = document.getElementById('close');
+    const closeButton = document.getElementById('close');
     instructionsButton.addEventListener('mouseclick', function() {
-        instructions.show();
+        console.log(instructionsButton);
+        instructions.outerHTML = "<dialog open id='instructions'><p>Guess the <strong>PLACE</strong> in five tries</p><p>Each guess must be valid word. Hit the submit button to submit.</p><p><strong>A new picture will be changed everyday.</strong></p><button id='close'>Close</button></dialog>";
     })
     closeButton.addEventListener('mouseclick', function() {
-        instructions.hide();
+        instructions.outerHTML = "<dialog id='instructions'><p>Guess the <strong>PLACE</strong> in five tries</p><p>Each guess must be valid word. Hit the submit button to submit.</p><p><strong>A new picture will be changed everyday.</strong></p><button id='close'>Close</button></dialog>";
     })
     
     /* submit buttons functionality */
