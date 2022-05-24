@@ -20,3 +20,6 @@ Html:
 line 31 is from https://tools.wingzero.tw/article/sn/990 
 line 48 is from https://getbootstrap.com/docs/4.0/components/input-group/
 line 104 is from https://www.nytimes.com/games/wordle/index.html 
+
+CSS:
+earth.jpg is from https://th.bing.com/th/id/OIP.L-vOunzj2JO8m_uTliyPpAHaHa?w=194&h=194&c=7&r=0&o=5&pid=1.7
