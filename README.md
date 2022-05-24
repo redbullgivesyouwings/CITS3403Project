@@ -15,3 +15,8 @@ https://www.jaborejob.com/top-ten-tourist-attractions-in-usa/
 https://www.listchallenges.com/150-most-famous-landmarks-in-the-world
 https://www.planetware.com/tourist-attractions/england-eng.htm
 https://www.pandotrip.com/top-10-most-recognizable-landmarks-in-the-world-7051/
+
+Html:
+line 31 is from https://tools.wingzero.tw/article/sn/990 
+line 48 is from https://getbootstrap.com/docs/4.0/components/input-group/
+line 104 is from https://www.nytimes.com/games/wordle/index.html 
