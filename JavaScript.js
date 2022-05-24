@@ -1,7 +1,6 @@
 'use strict'
 $(window).on('load', () =>  {
     /* getting day of week and corresponding image */
-    /* lines 5-6 is from https://www.w3schools.com/jsref/jsref_getday.asp */
     let d = new Date();
     let day = d.getDay();
     const images = ["sunday.jpeg", "monday.jpeg", "tuesday.jpeg", "wednesday.jpeg", "thursday.jpeg", "friday.jpeg", "saturday.jpeg"];
@@ -26,7 +25,8 @@ $(window).on('load', () =>  {
     let attempts = 0;
     for(let i = 0; i < 5; i++) {
         buttons[i].addEventListener('mousedown', function() {
-            const guess = document.getElementsByClassName('form-control')[i].value;
+            const str = document.getElementsByClassName('form-control')[i].value;
+            let guess = str.toLowerCase();
             if(guess == answers[day]) {
                 message.innerText = "Congratulations";
                 let accuracy = (1 - attempts/5) * 100;
