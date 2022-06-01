@@ -3,123 +3,330 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="viewport" content="width=device-width, initial-scale=1/>
-    <title>Guess a place</title>
-    <meta
-      property="description"
-      content="Guess the place in 5 tries. A new picture is available each day."
-    />
-    <meta property="og:title" content="Guess a place" />
-    <meta
-      property="og:description"
-      content="Guess the place in 5 tries. A new picture is available each day."
-    />  
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1/>    
+    <title>Fong Chun Yin Frankie 22945429 CITS3403 Final Exam</title>
+    <style>
+      body {
+        background-color: green;
+        margin: 0;
+        min-width: 250px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 5px 4px 5px 30px;
+        list-style-type: none;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
+  
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      ul li:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      ul li:hover {
+        background: #ddd;
+      }
+
+      ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+      }
+
+      ul li.checked::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 5px;
+        left: 10px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+      }
+
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 16px 12px 16px;
+      }
+
+      .close:hover {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .header {
+        background-color: grey;
+        padding: 20px 30px;
+        color: white;
+        text-align: center;
+      }
+
+      .header:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      input {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+      }
+
+      .addBtn {
+        padding: 10px;
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+      }
+
+      .addBtn:hover {
+        background-color: #bbb;
+      }
+    </style>                               
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="JavaScript.js"></script>
-        <game-app>
-          <game-manager>
-            <header>
-              <div class="title">Guess a place</div>
-            </header>
-            <!--This is the first page of showing the rules-->
-            <br>
-            <game-page>
-              <game-help>
-                <section>
-                  <button id="show">Instruction</button>
-                  <dialog id="instructions">
-                    <p>Guess the <strong>PLACE</strong> in five tries</p>
-                    <p>Each guess must be valid word. Hit the submit button to submit.</p>
-                    <p><strong>A new picture will be changed everyday.</strong></p>
-                    <button id="close">Close</button>
-                  </dialog>
-                </section>
-              </game-help>
-            </game-page>
-            <br>
-            <br>
-            <!--This is showing images-->
-            <img src="" alt="loading...">
-            <br>
-            <!--This is input text for 5 guesses-->
-            <div id="game">
-              <div id="board-container">
-                <div id="board" style="width:100%">
-                  <game-row>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">1</span>
-                        </div>
-                        <input type="text" class="form-control" >
-                        <input type="submit" class="btn btn-info" value="Submit">
-                      </div>
-                    </game-row>
-                    <game-row>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">2</span>
-                        </div>
-                        <input type="text" class="form-control" >
-                        <input type="submit" class="btn btn-info" value="Submit">
-                      </div>
-                    </game-row>
-                    <game-row>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">3</span>
-                        </div>
-                        <input type="text" class="form-control" >
-                        <input type="submit" class="btn btn-info" value="Submit">
-                      </div>
-                    </game-row>
-                    <game-row>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">4</span>
-                        </div>
-                        <input type="text" class="form-control" >
-                        <input type="submit" class="btn btn-info" value="Submit">
-                      </div>
-                    </game-row>
-                    <game-row>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">5</span>
-                        </div>
-                        <input type="text" class="form-control" >
-                        <input type="submit" class="btn btn-info" value="Submit">
-                      </div>
-                    </game-row>
-                  </div>
-                </div>
-              </div>
-              <!--This is the result-->
-              <game-modal open>
-                <div class="overlay">
-                  <div class="content">
-                    <slot>
-                      <game-stats>
-                    </slot>
-                  </div>
-                </div>
-                <game-stats>
-                  <div class="container">
-                    <h1>Result</h1>
-                    <div id="statistic">
-                      <div class="statistic-container">
-                        <div class="statistic"></div>
-                        <div class="label"></div>
-                      </div>
-                    </div>
-                    <h2></h2>
-                  </div>
-                </game-stats>
-              </game-modal>
-            </div>
-          </game-manager>
-        </game-app>
+    <script>
+      var mylst = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < mylst.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      mylst[i].appendChild(span);
+      }
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+        }
+      }
+      var lst = document.querySelector('ul');
+      lst.addEventListener('click', function(x) {
+      if (x.target.tagName === 'LI') {
+        x.target.classList.toggle('checked');
+        }
+      }, false);
+      function newElement() {
+        var li = document.createElement("li");
+        var iv = document.getElementById("myInput").value;
+        var t = document.createTextNode(iv);
+        li.appendChild(t);
+        if (iv === '') {
+          alert("Cannot be empty!");
+        } else {
+          document.getElementById("Todols").appendChild(li);
+        }
+      document.getElementById("myInput").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+     }
+    }
+    function newElement1() {
+      var li = document.createElement("li");
+      var iv = document.getElementById("myInput1").value;
+      var t = document.createTextNode(iv);
+      li.appendChild(t);
+      if (iv === '') {
+        alert("Cannot be empty!");
+      } else {
+        document.getElementById("Todols1").appendChild(li);
+      }
+      document.getElementById("myInput1").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
+    function newElement2() {
+      var li = document.createElement("li");
+      var iv = document.getElementById("myInput2").value;
+      var t = document.createTextNode(iv);
+      li.appendChild(t);
+      if (iv === '') {
+        alert("Cannot be empty!");
+      } else {
+        document.getElementById("Todols2").appendChild(li);
+      }
+      document.getElementById("myInput2").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+       }
+      }
+    }
+    </script>
+    <h1>Fong Chun Yin Frankie 22945429 CITS3403 Final Exam</h1>
+    <a href="#Overview">Overview</a>
+    <a href="#ClientSide">Client Side</a>
+    <a href="#ServerSide">Server Side</a>
+    <a href="#SoftwareProcess">Software Processes</a>
+    
+    <!--This is the overview-->
+    <h1 id="Overview">Overview</h1>
+    <p>In our puzzles, we have provided a daily pictures and users have 5 chances to guess the place of the picture. An instruction button will display the game rule.
+       After entering each guess to the box, users need to press the submit button to submit the answer.
+       If the answer is correct, the web will pop up a congratulations message. Otherwise, a try again message will be poped up.
+       If all 5 chances are used and users still not able to guess the answer, the correct answer will be shown automatically.
+       The following screenshot will show how the game works.</p>
+    <img src="instru.jpeg" alt="Instruction" width=300x300>
+    <p>This is the instruction.</p>
+    <img src="wrongans.jpeg" alt="Wrong answer" width=300x300>
+    <p>This screenshot shows what happen if user enter a wrong answer.</p>
+    <img src="correctans.jpeg" alt="Correct anser" width=300x300>
+    <p>This screenshot shows what happen if user enter a correct answer.</p>
+    <img src="fivechances.jpeg" alt="Five chances" width=300x300>
+    <p>This screenshot shows what happen if user cannot enter a correct guess in 5 chances.</p>
+    
+    <!--This is client server-->
+    <h1 id="ClientSide">Client side</h1>
+    <p>Client side is refer to everything showed in the page or to the user, including text and image. In our game, we have used HTTP, CSS and JavaScript in the client side. 
+    These show how users send their answer to the server, how the server check those answers is valid or not and send the result back to the user.</p>  
+    <div id="ToDo" class="header">
+      <h2>Client Side List</h2>
+      <input type="text" id="myInput">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+    <ul id="Todols">
+      <li>Log-in system(Let users access their account.)</li>
+      <li>Input boxes(Let users input their answers.)</li>
+      <li>Statistic result(Show the result of the user.)</li>
+    </ul>
+    <p><br>For our selection of the page's style, we have mimicked the Wordle's style. Therefore, the fonts and the width of the page should be looked like Wordle.
+    Howerever, as it is a game of guessing, we decided to include something related to our theme. We used an earth photo and black colour for the background to make the page
+    seems like a space.<br></p>
+    <p>For pro and con of using server-side rendering. The first advantage is it lets the user have a better experience. Since it lets the page loads faster and make it to be more efficient.
+    Second, it makes user to be more convenient. Since the content will be stored before loading the page, the search engine can easily draw those content.
+    On the other hand, the first disadvantage is it will be costly as the server-side have to store lots of data which means the server must have huge capacity of those data.
+    Second, server-side is not able to use JavaScript coding. In other words, it can just use for simple pages. Otherwise, the page rednering will become slower.<br></p>
+    <p>For pro and con of using client-side rendering. The first advantage is it is cheap and easy to host. Since web server is not required for client-server, it will be free for hosting it.
+    Second, it does not require any full-page reload. In other words, users do not have to wait for the server response anymore. On the other hand, the first disadvantage
+    is it will let users with slower devices have a bad experience. Since, by using their devices, it takes time to load and may let them not happy with it. Second,
+    it will load slower than server-side. Since, an extra round-trip to API server is required, the time for loading will be increased.</p>
+    
+    <!--This is server side-->
+    <h1 id="ServerSide">Server Side</h1>
+    <p>Server side rendering is refer to permanent data storing. It will also interact with users input. In our page, we stored different pictures in the server side. 
+       User validation should also be included in the page for storing the user's account. Besides, the overall result of the user should also be included for giving 
+       fully statistic report of every user.</p>
+    <div id="ToDo1" class="header">
+      <h2>Server Side List</h2>
+      <input type="text" id="myInput1">
+      <span onclick="newElement1()" class="addBtn">Add</span>
+    </div>
+    <ul id="Todols1">
+      <li>User validation(Check the user's validation.)</li>
+      <li>Images of the game(Since the image should be different every day, huge amount of images must be required.)</li>
+      <li>Comparasion with other users(It increases the competitive of the game.)</li>
+    </ul>
+    <p><br>For creating a page of allowing thousand of daily users, first thing need to be done is to plan the layer of the web and database. Also, a cache like CDN
+       for storing temporary data is required. In this way, it avoids the round trip between the user and the database. 
+       Then, in order to allow user can access any web server at anytime, a stateless server is required. In this case, user's data will be stored in persistant database, 
+       but not inside the web server. Since there will be a huge amount of data, one server won't be able to store all of them. Therefore, those data will be sharded to several servers.
+       Each data of each shard is unique.<br>
+       Representational State Transfer is an architectural style for developing websites. In REST Architecture, it allows user to cache data and decide when to use response caching.
+       Also, REST Architecture has a stateless HTTP protocol foundation, which means each request of the user has been isolated. No preserved information will be allowed. Furthermore,
+       the REST Architecture always allow to create a multiple layers of servers. Therefore, REST would enable scaling for thousand of daily users.<br></p>
+    <p>For the benefits of cookies, first one will be it's avalibality. Once cookies have been stored, it will be avalable a long time until user deletes it manully.
+       It can be retrieved even though the server is not working. Second, cookies are convenient. Cookies can be used in filling form. When user visit an address site,
+       the information can be filled by cookies automatically. Third, cookies reduce the load of server. Since cookies are stored in the hard drive, not in the server.
+       there won't be a burden issue for running it.<br>For the disadvantages of cookies, first one will be browser impact. Since cookies won't be restricted,
+       it will be accumulated and the server will be slow down eventually unless user deletes it manully. Second, cookies cause security issue. Since every hacker can view
+       the information from cookies, the user's information may be used in illegal way by the hacker. Third, cookies cause privacy issue. Since cookies will record all the online
+       activities and user won't be aware, those record can be collected by government or other business company.</p> 
+    
+    <!--This is software process-->
+    <h1 id="SoftwareProcess">Software Processes</h1>
+    <p>For the ideal team of delivering and maintaining a page, there are serveral things will be important. First one will be the development of the website. The
+    selection of software will be considerated and how to design the page is also important as it determines the target audience of the page we developed. 
+    Second will be the implementation of the page. It is important that to think about how to do the coding part and execute it of the page. Third will be the maintainance 
+    of the page. Since the page will be used for a long period of time, a group of people for maintaining the page regularly, such as updating the data is important.<br></p>
+    <div id="ToDo2" class="header">
+      <h2>Software Processes List</h2>
+      <input type="text" id="myInput2">
+      <span onclick="newElement2()" class="addBtn">Add</span>
+    </div>
+    <ul id="Todols">
+      <li>Development(Ways of designing the page)</li>
+      <li>Implementation(Ways of executing the code.)</li>
+      <li>Maintainance(Keep updating the page.)</li>
+    </ul>
+    <p><br><br>There will be three tests for my application including functional test, performance test and security test. For functinal test, 
+    it validates the software system against the functional requirements. The purpose of it is to test each function from the page, by providing input, checking the 
+    output agaist the functional requirements. It is important that to make sure the function can run properly. Otherwise, the whole page cannot be shown due to error. 
+    The example of functional test including unit testing, smoke testing and sanity testing.<br>The performance test determines how the stability, speed, scalability,
+    and responsiveness of the page works under a given workload. Since the application should handle a thousand of users, performance test need to be used to test whether
+    it fulfils the performance reqirements and the stability under peak traffic events. Before executing the performance test, the test environment and tools should be prepared
+    which is depended on each organisation.<br>The security test is to identify threats of the page and measure the potential risks of it, and provide ways to encounter 
+    those risks. Since the page will stored lots of user information, security test is important to ensure the user's security. For running the security test, a test plan
+    should be required which is including security-related tests, test data, test tools and the analysis of various tests outputs from different security tools.<br><br></p>
+    <p>If I'm continuing to develope the application, there will be several things I would like to change. Firsly, we should work as a group. In this project, we has
+    seperated to three individual parts including HTML, CSS and JavaScript. It leads us to work as alone and seldom communicate with each other. When we faced difficulties,
+    it's hard to solve since we are not working as a group and we didn't communicate. Therefore, if we can work together in each part, I'm sure we can solve those difficulties.
+    Secondly, I would make a time schedule for our project timeline. In the project, we didn't set a timeline, which leaded we didn't plan when should we start the project and
+    everything kind of hurry and messed up. If we have a clear schedule, we should be able to work less stressful and more efficient. Lastly, we should communicate more
+    in the project. Instead of jsut using messages to communicate with each other, a face to face meeting should be hold. Communicating with message only cause a lot of 
+    miscommunication, such as different expectations. Therefor, if we can communicate through face to face meeting or video call should be able to avoid miscommunications.</p>
   </body>
 </html>
